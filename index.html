@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        #app {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #factDisplay {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Monkey Facts</h1>
+        <button id="generateFact">Show Random Fact</button>
+        <div id="factDisplay"></div>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Diverse Species",
+                "description": "There are over 260 species of monkeys, ranging from the tiny pygmy marmoset to the large mandrill."
+            },
+            {
+                "fact": "Old World vs. New World",
+                "description": "Monkeys are divided into two groups: Old World monkeys from Africa and Asia, and New World monkeys from the Americas."
+            },
+            {
+                "fact": "Prehensile Tails",
+                "description": "Many New World monkeys, like the spider monkey, have prehensile tails that can grasp and hold objects."
+            },
+            {
+                "fact": "Social Animals",
+                "description": "Monkeys are highly social creatures and often live in groups called troops, which can range from a few individuals to hundreds."
+            },
+            {
+                "fact": "Communication",
+                "description": "Monkeys use a variety of vocalizations, facial expressions, and body movements to communicate with each other."
+            },
+            {
+                "fact": "Tool Use",
+                "description": "Some monkey species, such as capuchins, are known to use tools like sticks to extract insects from tree bark or rocks to crack open nuts."
+            },
+            {
+                "fact": "Dietary Habits",
+                "description": "Monkeys are generally omnivorous, eating a diet that includes fruits, leaves, seeds, nuts, insects, and small animals."
+            },
+            {
+                "fact": "Intelligence",
+                "description": "Monkeys are known for their intelligence and problem-solving abilities, often being used in scientific research to study cognition."
+            },
+            {
+                "fact": "Color Vision",
+                "description": "Unlike many other mammals, Old World monkeys have trichromatic color vision, similar to humans, allowing them to distinguish between red, green, and blue."
+            },
+            {
+                "fact": "Conservation Status",
+                "description": "Many monkey species are threatened or endangered due to habitat loss, hunting, and the illegal pet trade."
+            }
+        ];
+
+        document.getElementById('generateFact').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById('factDisplay').innerHTML = `<h2>${fact.fact}</h2><p>${fact.description}</p>`;
+        });
+    </script>
+</body>
+</html>
